@@ -19,7 +19,7 @@ jobs:
           java-version: '17'
 
       - name: Build
-        run: cd mvn clean compile
+        run: mvn clean compile
 
       - name: Test
-        run: cd mvn test
+        run: mvn test
