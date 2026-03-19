@@ -6,7 +6,7 @@ public class Solicitud {
 	private long id;
 	private LocalDate fechaCreacion;
 	private Estado estado;
-	int x = 5*5
+	int x = 5*4
 	
 	public enum Estado {
 	    ABIERTA,
