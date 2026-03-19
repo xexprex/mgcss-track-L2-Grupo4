@@ -19,7 +19,7 @@ jobs:
           java-version: '17'
 
       - name: Build
-        run: cd mgcss-track-L2-Grupo4 && mvn clean compile
+        run: cd mvn clean compile
 
       - name: Test
-        run: cd mgcss-track-L2-Grupo4 && mvn test
+        run: cd mvn test
