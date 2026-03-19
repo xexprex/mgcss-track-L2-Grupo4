@@ -6,6 +6,7 @@ public class Solicitud {
 	private long id;
 	private LocalDate fechaCreacion;
 	private Estado estado;
+	private pp;
 	
 	public enum Estado {
 	    ABIERTA,
