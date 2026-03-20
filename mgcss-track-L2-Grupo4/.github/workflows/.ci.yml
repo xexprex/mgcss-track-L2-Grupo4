@@ -27,3 +27,5 @@ jobs:
         run: mvn test
         working-directory: mgcss-track-L2-Grupo4
 
+SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=xexprex_mgcss-track-L2-Grupo4
