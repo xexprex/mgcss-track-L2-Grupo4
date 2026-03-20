@@ -20,9 +20,6 @@ jobs:
 
       - name: Build
         run: mvn clean compile
-        working-directory: mgcss-track-L2-Grupo4
-
 
       - name: Test
         run: mvn test
-        working-directory: mgcss-track-L2-Grupo4
