@@ -9,6 +9,7 @@ public class SolicitudTest {
 
 	    assertThrows(IllegalStateException.class, () -> {
 	        solicitud.cerrar();
+	        
 	    });
     }
 

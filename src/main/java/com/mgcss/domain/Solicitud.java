@@ -23,6 +23,7 @@ public class Solicitud {
     }
     public void iniciarProceso() {
         this.estado = Estado.EN_PROCESO;
+        
     }
 
 
