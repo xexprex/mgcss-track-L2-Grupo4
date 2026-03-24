@@ -5,12 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SolicitudTest {
 	@Test
     void noSePuedeCerrarSiNoEstaEnProceso() {
-        Solicitud solicitud = new Solicitud();
-        solicitud.getEstado(Solicitud.Estado.ABIERTA);
+		Solicitud solicitud = new Solicitud();
 
-        assertThrows(IllegalStateException.class, () -> {
-            solicitud.cerrar();
-        });
+	    assertThrows(IllegalStateException.class, () -> {
+	        solicitud.cerrar();
+	    });
     }
 
 }
