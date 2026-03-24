@@ -13,5 +13,17 @@ public class Solicitud {
 	    CERRADA
 	}
 	
+	
+	public Estado getEstado(Estado est) {
+		this.estado=est;
+		return estado;
+	}
+
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
+
 	public void cerrar() {};
 }
