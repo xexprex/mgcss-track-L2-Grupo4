@@ -30,13 +30,13 @@ public class Solicitud {
 
 	public void cerrar() {
 		 if (estado != Estado.EN_PROCESO) {
-		        throw new IllegalStateException("No se puede cerrar si no está en proceso");
+		        throw new IllegalStateException("La solicitud debe estar en proceso para poder cerrarse");
 		    }
 		    estado = Estado.CERRADA;
 	}
 	public void asignarTecnico(Tecnico tecnico) {
 	    if (!tecnico.isActivo()) {
-	        throw new IllegalStateException("Tecnico inactivo");
+	        throw new IllegalStateException("El técnico debe estar activo para ser asignado");
 	    }
 	    this.tecnico = tecnico;
 	}

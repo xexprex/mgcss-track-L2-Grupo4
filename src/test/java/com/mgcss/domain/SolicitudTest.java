@@ -3,6 +3,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SolicitudTest {
+	@Test
+	void cerrarSolicitudEnProcesoFunciona() {
+	    Solicitud solicitud = new Solicitud();
+	    solicitud.iniciarProceso();
+
+	    solicitud.cerrar();
+
+	    assertEquals(Solicitud.Estado.CERRADA, solicitud.getEstado());
+	}
 	
 	@Test
     void noSePuedeCerrarSiNoEstaEnProceso() {
