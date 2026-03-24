@@ -6,6 +6,7 @@ public class Solicitud {
 	private long id;
 	private LocalDate fechaCreacion;
 	private Estado estado;
+	private Tecnico tecnico;
 	
 	public enum Estado {
 	    ABIERTA,
@@ -32,5 +33,15 @@ public class Solicitud {
 		        throw new IllegalStateException("No se puede cerrar si no está en proceso");
 		    }
 		    estado = Estado.CERRADA;
-	};
+	}
+	public void asignarTecnico(Tecnico tecnico) {
+	    if (!tecnico.isActivo()) {
+	        throw new IllegalStateException("Tecnico inactivo");
+	    }
+	    this.tecnico = tecnico;
+	}
+
+	public Tecnico getTecnico() {
+	    return tecnico;
+	}
 }
