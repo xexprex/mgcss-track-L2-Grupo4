@@ -11,14 +11,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Necesario para que Sonar lea bien el historial
 
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '17'
+
+      - name: Build
+        run: mvn clean compile
+
+      - name: Test
+        run: mvn test
 
       - name: Build and analyze
         env:
