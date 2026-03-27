@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Necesario para que Sonar lea bien el historial
 
       - name: Setup Java
         uses: actions/setup-java@v3
@@ -18,13 +20,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Build
-        run: mvn clean compile
-
-      - name: Test
-        run: mvn test
-        
-      - name: Build and analyze
+      - name: Build, Test and Analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=xexprex_mgcss-track-L2-Grupo4 -Dsonar.host.url=https://sonarcloud.io -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+        run: mvn -B clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=xexprex_mgcss-track-L2-Grupo4 -Dsonar.organization=xexprex -Dsonar.host.url=https://sonarcloud.io -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
